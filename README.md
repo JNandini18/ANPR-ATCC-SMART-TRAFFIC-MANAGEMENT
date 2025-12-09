@@ -65,7 +65,7 @@ pip install fast_plate_ocr
 pip install numpy opencv-python-headless
 
 
-📁 Step 2 — Model Files
+### 📁 Step 2 — Model Files
 
 Place the following trained YOLO weights inside the project root folder:
 
@@ -75,11 +75,11 @@ yolo_ATCC.pt → Traffic classification model
 
 ⚠ Large weight files (100MB+) may require Git LFS or external storage such as Google Drive, Kaggle, or HuggingFace.
 
-💡 Usage Instructions
+### 💡 Usage Instructions
 ▶ Running the Streamlit Application
 streamlit run app.py
 
-🌐 Application Workflow
+### 🌐 Application Workflow
 
 Choose Model Type: ANPR or ATCC
 
@@ -93,11 +93,11 @@ Processed video/image
 
 Detection log (CSV)
 
-📚 Model Training & Dataset Preparation
+### 📚 Model Training & Dataset Preparation
 
 The following notebooks guide model development and dataset annotation:
 
-🏎 ANPR Model Training (anpr-license-traning.ipynb)
+### 🏎 ANPR Model Training (anpr-license-traning.ipynb)
 
 Framework: YOLOv8
 
@@ -111,7 +111,7 @@ mAP50: 0.854
 
 mAP50-95: 0.475
 
-🚌 ATCC Model Training (atcc-bdd100k.ipynb)
+###  🚌 ATCC Model Training (atcc-bdd100k.ipynb)
 
 Model Type: Multi-class YOLOv8 object detection
 
@@ -127,12 +127,12 @@ mAP50: 0.587
 
 mAP50-95: 0.325
 
-2. Model Files
+### 2. Model Files
 The Streamlit application requires the following trained YOLO model weights (.pt files) in the root directory:
 
 yolo_ANPR.pt (for license plate detection)
 yolo_ATCC.pt (for traffic object detection)
-💡 Usage
+### 💡 Usage
 Running the Streamlit App
 Start the application from your terminal:
 
@@ -144,12 +144,12 @@ The application processes the file, displaying the annotated result and providin
 📚 Training and Data Preparation
 The provided Jupyter notebooks detail the training and data preparation processes used to create the models.
 
-1. ANPR Model Training (anpr-license-traning.ipynb)
+## 1. ANPR Model Training (anpr-license-traning.ipynb)
 Model: YOLOv8 trained specifically for license plate detection.
 Target Class: Single class: license_plate (0).
 Training Details: Trained using the ultralytics library for 30 epochs.
 Validation Performance: Final mAP50: 0.854, mAP50-95: 0.475.
-2. ATCC Model Training (atcc-bdd100k.ipynb)
+## 2. ATCC Model Training (atcc-bdd100k.ipynb)
 Model: YOLOv8 trained for multi-class traffic object classification.
 Dataset: Uses the BDD100K dataset.
 Preprocessing: The notebook provides scripts to convert BDD100K JSON annotations into the standard YOLO format (.txt files) with normalized bounding box coordinates.
