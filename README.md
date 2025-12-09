@@ -63,3 +63,66 @@ pip install fast_plate_ocr
 
 # Optional: dependencies for training notebooks
 pip install numpy opencv-python-headless
+
+
+📁 Step 2 — Model Files
+
+Place the following trained YOLO weights inside the project root folder:
+
+yolo_ANPR.pt → License plate detection model
+
+yolo_ATCC.pt → Traffic classification model
+
+⚠ Large weight files (100MB+) may require Git LFS or external storage such as Google Drive, Kaggle, or HuggingFace.
+
+💡 Usage Instructions
+▶ Running the Streamlit Application
+streamlit run app.py
+
+🌐 Application Workflow
+
+Choose Model Type: ANPR or ATCC
+
+Upload an image or video
+
+Real-time inference displays annotated visual results
+
+Download:
+
+Processed video/image
+
+Detection log (CSV)
+
+📚 Model Training & Dataset Preparation
+
+The following notebooks guide model development and dataset annotation:
+
+🏎 ANPR Model Training (anpr-license-traning.ipynb)
+
+Framework: YOLOv8
+
+Target Class: license_plate (ID: 0)
+
+Training Duration: 30 epochs
+
+Performance Results:
+
+mAP50: 0.854
+
+mAP50-95: 0.475
+
+🚌 ATCC Model Training (atcc-bdd100k.ipynb)
+
+Model Type: Multi-class YOLOv8 object detection
+
+Dataset: BDD100K (traffic environment dataset)
+
+Preprocessing Pipeline: JSON → YOLO TXT format conversion
+
+Classes: Includes car, truck, bus, pedestrian, traffic light, etc.
+
+Validation Metrics:
+
+mAP50: 0.587
+
+mAP50-95: 0.325
