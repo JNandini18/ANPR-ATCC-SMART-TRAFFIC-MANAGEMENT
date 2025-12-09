@@ -126,3 +126,32 @@ Validation Metrics:
 mAP50: 0.587
 
 mAP50-95: 0.325
+
+2. Model Files
+The Streamlit application requires the following trained YOLO model weights (.pt files) in the root directory:
+
+yolo_ANPR.pt (for license plate detection)
+yolo_ATCC.pt (for traffic object detection)
+💡 Usage
+Running the Streamlit App
+Start the application from your terminal:
+
+streamlit run app.py
+Application Workflow
+Select the Model Type in the sidebar: ANPR or ATCC.
+Upload an image or video file via the interface.
+The application processes the file, displaying the annotated result and providing a Download Processed Video/Image button and a Detailed Detection Log (for videos).
+📚 Training and Data Preparation
+The provided Jupyter notebooks detail the training and data preparation processes used to create the models.
+
+1. ANPR Model Training (anpr-license-traning.ipynb)
+Model: YOLOv8 trained specifically for license plate detection.
+Target Class: Single class: license_plate (0).
+Training Details: Trained using the ultralytics library for 30 epochs.
+Validation Performance: Final mAP50: 0.854, mAP50-95: 0.475.
+2. ATCC Model Training (atcc-bdd100k.ipynb)
+Model: YOLOv8 trained for multi-class traffic object classification.
+Dataset: Uses the BDD100K dataset.
+Preprocessing: The notebook provides scripts to convert BDD100K JSON annotations into the standard YOLO format (.txt files) with normalized bounding box coordinates.
+Classes: 10 traffic-related classes including car, truck, bus, pedestrian, traffic light, etc.
+Validation Performance: Final mAP50: 0.587, mAP50-95: 0.325.
