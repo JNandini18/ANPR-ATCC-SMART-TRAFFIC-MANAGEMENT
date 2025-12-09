@@ -43,7 +43,7 @@ Ensure you have:
 
 ---
 
-### 📦 Step 1 — Install Dependencies
+## 📦 Step 1 — Install Dependencies
 
 The required Python libraries include YOLOv8 utilities, OCR, Streamlit and OpenCV.
 
@@ -55,17 +55,17 @@ The required Python libraries include YOLOv8 utilities, OCR, Streamlit and OpenC
 | `opencv-python`, `numpy`, `pillow`, `pandas` | Image manipulation and data processing |
 
 
-# Install core dependencies
+### Install core dependencies
 pip install -qU ultralytics opencv-python pillow pandas streamlit
 
-# Install OCR module
+### Install OCR module
 pip install fast_plate_ocr
 
-# Optional: dependencies for training notebooks
+### Optional: dependencies for training notebooks
 pip install numpy opencv-python-headless
 
 
-### 📁 Step 2 — Model Files
+## 📁 Step 2 — Model Files
 
 Place the following trained YOLO weights inside the project root folder:
 
@@ -146,13 +146,13 @@ The application processes the file, displaying the annotated result and providin
 ### 📚 Training and Data Preparation
 The provided Jupyter notebooks detail the training and data preparation processes used to create the models.
 
-## 1. ANPR Model Training (anpr-license-traning.ipynb)
+### 1. ANPR Model Training (anpr-license-traning.ipynb)
 Model: YOLOv8 trained specifically for license plate detection.
 Target Class: Single class: license_plate (0).
 Training Details: Trained using the ultralytics library for 30 epochs.
 Validation Performance: Final mAP50: 0.854, mAP50-95: 0.475.
 
-## 2. ATCC Model Training (atcc-bdd100k.ipynb)
+### 2. ATCC Model Training (atcc-bdd100k.ipynb)
 Model: YOLOv8 trained for multi-class traffic object classification.
 Dataset: Uses the BDD100K dataset.
 Preprocessing: The notebook provides scripts to convert BDD100K JSON annotations into the standard YOLO format (.txt files) with normalized bounding box coordinates.
